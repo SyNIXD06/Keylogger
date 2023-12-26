@@ -19,7 +19,7 @@ def solve_password(maxrange):
         for attempt in product(charset, repeat=i):
             tmpPass = ''.join(attempt)
             try:
-                file.load_key(tmpPass)  # Open the file using the temporal password
+                file.load_key(tmpPass)  
                 print("Password correct: ", attempt)  # Array
                 print("password: ", tmpPass)  # String
                 passwords.append(tmpPass)
@@ -36,7 +36,6 @@ execution_time = time.time() - start_time
 print("--- %s seconds ---" % execution_time)
 print("--- %s min ---" % (execution_time / 60))
 
-# Guardar los resultados en un archivo XLSX
 wb = openpyxl.Workbook()
 ws = wb.active
 ws.title = "Cracked Passwords"
